@@ -141,7 +141,7 @@
 <h2>🔍 In-Depth Overview: Why the Formovie Theater 4K Ultra Short Throw Triple Laser Projector Stands Out</h2>
 <p>Investing in high-end gear requires rigorous vetting. The <strong>Formovie Theater 4K Ultra Short Throw Triple Laser Projector</strong> has garnered widespread acclaim across industry communities, praised for its uncompromising build materials, refined ergonomics, and class-leading performance.</p>
 <p>In this deep-dive review, we evaluate whether its real-world performance justifies the premium price tag, analyze pricing across authorized retailers, and highlight the key strengths and weaknesses you need to know before buying.</p>
-<div class="img-wrapper"><img src="/images/formovie-theater-4k-laser-projector.jpg" alt="Formovie Theater 4K Ultra Short Throw Triple Laser Projector" /></div>
+<div class="img-wrapper"><img src="../images/formovie-theater-4k-laser-projector.jpg" alt="Formovie Theater 4K Ultra Short Throw Triple Laser Projector" /></div>
 <hr style="border:0;height:1px;background:var(--card-border);margin:34px 0;"/>
 <h2>🛒 Where to Buy: Multi-Store Live Price Comparison</h2>
 <p>Stock and flash promotions fluctuate daily. We strongly recommend comparing pricing across authorized retailers before placing your order:</p>
@@ -205,7 +205,7 @@ Prices occasionally dip during Prime Days, Black Friday, Cyber Week, and seasona
   <div class="sticky-buy-bar" id="stickyBuyBar">
     <div class="sticky-bar-container">
       <div class="sticky-product-info">
-        <img src="/images/formovie-theater-4k-laser-projector.jpg" alt="Formovie Theater 4K Ultra Short Throw Triple Laser Projector" class="sticky-thumb" />
+        <img src="../images/formovie-theater-4k-laser-projector.jpg" alt="Formovie Theater 4K Ultra Short Throw Triple Laser Projector" class="sticky-thumb" />
         <div>
           <div class="sticky-title">Formovie Theater 4K Ultra Short Throw Triple Laser Projector</div>
           <div class="sticky-rating">★★★★★ 4.9/5 • Editor's Choice</div>
@@ -304,17 +304,17 @@ Prices occasionally dip during Prime Days, Black Friday, Cyber Week, and seasona
         var stores = region.stores || [];
         for (var i = 0; i < stores.length; i++) {
           var s = stores[i];
-          var badgeHtml = s.is_primary ? '<span style="background:linear-gradient(135deg,#d4af37,#b45309);color:#000;font-size:0.7rem;font-weight:800;padding:3px 8px;border-radius:12px;font-family:var(--font-mono);">TOP RATED</span>' : '';
+          var badgeHtml = s.badge ? '<span style="background:linear-gradient(135deg,#d4af37,#b45309);color:#000;font-size:0.7rem;font-weight:800;padding:3px 8px;border-radius:12px;font-family:var(--font-mono);">' + s.badge + '</span>' : '';
           storeCards.push('<div class="geo-store-card">' +
             '<div>' +
               '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">' +
                 '<span style="font-weight:700;color:var(--text-main);font-size:1.05rem;">' + s.name + '</span>' +
                 badgeHtml +
               '</div>' +
-              '<div style="font-size:1.25rem;font-weight:800;color:var(--accent-gold);margin-bottom:6px;font-family:var(--font-mono);">' + s.price + '</div>' +
-              '<div style="font-size:0.8rem;color:var(--text-dim);">' + s.availability + '</div>' +
+              '<div style="font-size:0.95rem;font-weight:700;color:var(--accent-gold);margin-bottom:6px;font-family:var(--font-mono);">' + s.status + '</div>' +
+              '<div style="font-size:0.8rem;color:var(--text-dim);">' + (region.currency || 'USD') + ' • Verified Stock</div>' +
             '</div>' +
-            '<a href="' + s.url + '" target="_blank" rel="nofollow sponsor" class="btn btn-primary" style="padding:10px;font-size:0.85rem;">' + s.button_text + ' &rarr;</a>' +
+            '<a href="' + s.url + '" target="_blank" rel="nofollow sponsor" class="btn btn-primary" style="padding:10px;font-size:0.85rem;">Check Best Deal &rarr;</a>' +
           '</div>');
         }
 
@@ -332,7 +332,7 @@ Prices occasionally dip during Prime Days, Black Friday, Cyber Week, and seasona
         }
 
         if (detectedLabel) {
-          detectedLabel.textContent = 'Active Region: ' + region.country_name + ' (' + region.currency + ') • Verified Live';
+          detectedLabel.textContent = 'Active Region: ' + (region.name || regCode) + ' (' + (region.currency || '') + ') • Verified Live';
         }
       }
 
