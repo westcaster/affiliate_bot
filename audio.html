@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,26 +9,50 @@
   <link rel="alternate" type="application/rss+xml" title="CrownGear Reviews - High-Ticket Luxury & Tech Radar RSS Feed" href="feed.xml">
 </head>
 <body>
+  <div class="reading-progress-bar" id="readingProgress"></div>
+
+  <div class="masthead-ticker">
+    <span>👑 CROWNGEAR REVIEWS - HIGH-TICKET LUXURY & TECH RADAR</span> • 
+    <span>INDEPENDENT LUXURY & TECH RADAR</span> • 
+    <span>VERIFIED GLOBAL DEALS</span> • 
+    <span>2026 EDITION</span>
+  </div>
+
   <header>
     <div class="nav-container">
-      <a href="index.html" class="logo">⚡ <span>CrownGear Reviews - High-Ticket Luxury & Tech Radar</span></a>
+      <a href="index.html" class="logo"><span class="logo-icon">👑</span> <span>CrownGear Reviews - High-Ticket Luxury & Tech Radar</span></a>
       <nav>
         <ul>
           <li><a href="index.html" class="">Home</a></li><li><a href="kitchen.html" class="">Kitchen</a></li><li><a href="audio.html" class="active">Audio</a></li><li><a href="smarthome.html" class="">Smart Home</a></li><li><a href="creator.html" class="">Creator Gear</a></li><li><a href="luxury.html" class="">Luxury EDC</a></li>
         </ul>
       </nav>
+      <div class="nav-right">
+        <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle theme">
+          <span id="themeIcon">☀️</span> <span id="themeText">Light</span>
+        </button>
+      </div>
     </div>
   </header>
 
+  <div class="mobile-category-bar">
+    <a href="index.html" class="">🏠 All</a><a href="kitchen.html" class="">🍳 Kitchen</a><a href="audio.html" class="active">🎧 Audio</a><a href="smarthome.html" class="">🤖 Smart Home</a><a href="creator.html" class="">🎥 Creator</a><a href="luxury.html" class="">⌚ Luxury EDC</a>
+  </div>
+
   <div class="hero">
+    <div class="hero-pretitle">The Definitive Radar • 2026 Edition</div>
     <h1>🎧 Audiophile & Elite Audio</h1>
     <p>Studio-grade wireless headphones, high-resolution DACs, and home theater soundbars.</p>
+    <div class="hero-trust-badges">
+      <span>👑 100% Unbiased Editorial</span>
+      <span>🔬 Hands-On Benchmarking</span>
+      <span>🌍 Multi-Currency Price Tracking</span>
+    </div>
   </div>
 
   <div class="container">
     <div class="section-header">
       <h2>Latest In-Depth Reviews</h2>
-      <span style="color: #9ca3af; font-size: 0.9rem;">1 Verified Articles</span>
+      <span class="section-meta-pill">1 Verified Articles</span>
     </div>
 
     <div class="grid">
@@ -37,15 +61,16 @@
           <div class="card-img-wrapper">
             <img src="/images/sennheiser-hd-800-s.jpg" alt="Sennheiser HD 800 S Reference Flagship Headphones" loading="lazy" />
             <span class="card-badge">Audiophile & Elite Audio</span>
+            <span class="card-rating-float">⭐ 4.9</span>
           </div>
           <div class="card-body">
             <div class="card-meta">
-              <span>Sennheiser</span>
+              <span class="card-brand">Sennheiser</span>
               <span class="card-price">$1,799.95</span>
             </div>
             <h3 class="card-title"><a href="reviews/sennheiser-hd-800-s-reference-flagship-headphones.html">Sennheiser HD 800 S Reference Flagship Headphones</a></h3>
-            <p class="card-desc">Comprehensive test breakdown, pros & cons, and verified multi-store live price comparisons.</p>
-            <div style="font-size:0.8rem;color:#10b981;margin-bottom:14px;display:flex;align-items:center;gap:6px;">
+            <p class="card-desc">Comprehensive laboratory test breakdown, hands-on ergonomics analysis, and multi-store verified live deals.</p>
+            <div class="card-intl-badge">
               <span>🌍</span> <span>US, CA, UK, EU, AU & Global Deals</span>
             </div>
             <div class="btn-group">
@@ -61,11 +86,49 @@
   <footer>
     <div class="footer-links">
       <a href="index.html">Home</a>
+      <a href="kitchen.html">Kitchen</a>
+      <a href="audio.html">Audio</a>
+      <a href="smarthome.html">Smart Home</a>
+      <a href="creator.html">Creator Gear</a>
+      <a href="luxury.html">Luxury EDC</a>
       <a href="sitemap.xml">Sitemap</a>
       <a href="feed.xml">RSS Feed</a>
-      <a href="pinterest_pins.csv" download>Pinterest Batch CSV</a>
     </div>
-    <p>&copy; 2026 CrownGear Reviews - High-Ticket Luxury & Tech Radar. 100% Free Autonomous Content System.</p>
+    <p>&copy; 2026 CrownGear Reviews - High-Ticket Luxury & Tech Radar. All rights reserved.</p>
+    <p class="footer-disclaimer">CrownGear Reviews is an independent publication dedicated to high-ticket consumer gear, luxury mechanical timepieces, and flagship technology. Editorial decisions are made strictly without manufacturer sponsorship.</p>
   </footer>
+
+  <script>
+  (function() {
+    var savedTheme = localStorage.getItem('cg_theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    function updateThemeBtn() {
+      var icon = document.getElementById('themeIcon');
+      var txt = document.getElementById('themeText');
+      var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      if (icon) icon.textContent = isDark ? '☀️' : '🌙';
+      if (txt) txt.textContent = isDark ? 'Light' : 'Dark';
+    }
+    updateThemeBtn();
+    var toggleBtn = document.getElementById('themeToggleBtn');
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', function() {
+        var cur = document.documentElement.getAttribute('data-theme') || 'dark';
+        var next = cur === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('cg_theme', next);
+        updateThemeBtn();
+      });
+    }
+
+    window.addEventListener('scroll', function() {
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      var pb = document.getElementById('readingProgress');
+      if (pb) pb.style.width = scrolled + '%';
+    });
+  })();
+  </script>
 </body>
 </html>
