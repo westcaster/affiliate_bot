@@ -125,7 +125,7 @@
           <div class="single-score-badge">★★★★★ 4.9/5</div>
         </div>
         <div class="single-actions-group">
-          <a href="https://www.amazon.com/dp/B099K1M3L3?tag=yourtag-20" target="_blank" rel="nofollow sponsor" class="btn-habitat-primary">Check Best Deal (Amazon / Authorized) &rarr;</a>
+          <a href="https://www.amazon.com/dp/B099K1M3L3?tag=yourtag-20" id="primaryHeroDealBtn" target="_blank" rel="nofollow sponsor" class="btn-habitat-primary">Check Best Deal (Amazon / Authorized) &rarr;</a>
           <a href="#geoBuyBox" class="btn-habitat-secondary">Compare All Store Prices 🌍</a>
         </div>
         <div class="guarantee-microcopy">
@@ -366,7 +366,7 @@ Prices occasionally dip during Prime Days, Black Friday, Cyber Week, and seasona
       </div>
       <div class="sticky-actions">
         <div class="sticky-price">$6,600.00</div>
-        <a href="https://www.amazon.com/dp/B099K1M3L3?tag=yourtag-20" target="_blank" rel="nofollow sponsor" class="sticky-btn sticky-btn-primary">Check Best Deal</a>
+        <a href="https://www.amazon.com/dp/B099K1M3L3?tag=yourtag-20" id="stickyHeroDealBtn" target="_blank" rel="nofollow sponsor" class="sticky-btn sticky-btn-primary">Check Best Deal</a>
         <a href="#geoBuyBox" class="sticky-btn sticky-btn-secondary">Compare Stores 🌍</a>
       </div>
     </div>
@@ -520,6 +520,13 @@ Prices occasionally dip during Prime Days, Black Friday, Cyber Week, and seasona
 
         var storeCards = [];
         var stores = region.stores || [];
+        var firstStoreUrl = (stores && stores.length > 0 && stores[0].url) ? stores[0].url : null;
+        if (firstStoreUrl) {
+          var pBtn = document.getElementById('primaryHeroDealBtn');
+          if (pBtn) pBtn.href = firstStoreUrl;
+          var sBtn = document.getElementById('stickyHeroDealBtn');
+          if (sBtn) sBtn.href = firstStoreUrl;
+        }
         for (var i = 0; i < stores.length; i++) {
           var s = stores[i];
           var badgeHtml = s.badge ? '<span style="background:var(--accent-gold);color:#000;font-size:0.7rem;font-weight:800;padding:3px 8px;border-radius:12px;font-family:var(--font-mono);">' + s.badge + '</span>' : '';
