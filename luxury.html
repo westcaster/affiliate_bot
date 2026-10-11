@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Luxury EDC & Watches Reviews - CrownGear Reviews - High-Ticket Luxury & Tech Radar</title>
+  <title>Luxury EDC & Watches - CrownGear Reviews - High-Ticket Luxury & Tech Radar</title>
   <meta name="description" content="Precision mechanical timepieces, titanium tools, and heritage leather gear.">
   <link rel="stylesheet" href="style.css">
   <link rel="alternate" type="application/rss+xml" title="CrownGear Reviews - High-Ticket Luxury & Tech Radar RSS Feed" href="feed.xml">
@@ -11,96 +11,192 @@
 <body>
   <div class="reading-progress-bar" id="readingProgress"></div>
 
-  <div class="masthead-ticker">
-    <span>👑 CROWNGEAR REVIEWS - HIGH-TICKET LUXURY & TECH RADAR</span> • 
-    <span>INDEPENDENT LUXURY & TECH RADAR</span> • 
-    <span>VERIFIED GLOBAL DEALS</span> • 
-    <span>2026 EDITION</span>
+  <!-- Announcement Bar -->
+  <div class="crown-announcement-bar">
+    <span>👑 <span class="highlight">CrownGear Metrology Radar</span></span>
+    <span>&bull;</span>
+    <span>100% Independent Editorial Testing</span>
+    <span>&bull;</span>
+    <span>Multi-Store Verified Deals 2026</span>
   </div>
 
-  <header>
+  <!-- Habitat Sticky Header -->
+  <header class="habitat-header">
     <div class="nav-container">
-      <a href="index.html" class="logo"><span class="logo-icon">👑</span> <span>CrownGear Reviews - High-Ticket Luxury & Tech Radar</span></a>
+      <a href="index.html" class="brand-logo">
+        <span class="crown-icon-wrapper">
+          <svg class="crown-logo-svg" width="30" height="26" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="crownGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#9a6e1a"/>
+    </linearGradient>
+  </defs>
+  <path d="M2 7L7.5 18H24.5L30 7L21.5 12.5L16 3L10.5 12.5L2 7Z" fill="url(#crownGoldGrad)"/>
+  <rect x="6" y="21" width="20" height="3.5" rx="1" fill="url(#crownGoldGrad)"/>
+</svg>
+        </span>
+        <span class="logo-text">CrownGear Reviews - High-Ticket Luxury & Tech Radar</span>
+        <span class="brand-radar-pill">RADAR</span>
+      </a>
       <nav>
-        <ul>
-          <li><a href="index.html" class="">Home</a></li><li><a href="kitchen.html" class="">Kitchen</a></li><li><a href="audio.html" class="">Audio</a></li><li><a href="smarthome.html" class="">Smart Home</a></li><li><a href="creator.html" class="">Creator Gear</a></li><li><a href="luxury.html" class="active">Luxury EDC</a></li>
+        <ul class="nav-menu">
+          <li><a href="luxury.html" class="active">Watches & EDC</a></li><li class="nav-divider">|</li><li><a href="audio.html" class="">Audio & Cinema</a></li><li class="nav-divider">|</li><li><a href="kitchen.html" class="">Kitchen Tech</a></li><li class="nav-divider">|</li><li><a href="smarthome.html" class="">Smart Living</a></li><li class="nav-divider">|</li><li><a href="creator.html" class="">Creator Studio</a></li>
         </ul>
       </nav>
-      <div class="nav-right">
+      <div class="nav-actions">
         <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle theme">
-          <span id="themeIcon">☀️</span> <span id="themeText">Light</span>
+          <span id="themeIcon">🌙</span> <span id="themeText">Dark</span>
         </button>
       </div>
     </div>
   </header>
 
   <div class="mobile-category-bar">
-    <a href="index.html" class="">🏠 All</a><a href="kitchen.html" class="">🍳 Kitchen</a><a href="audio.html" class="">🎧 Audio</a><a href="smarthome.html" class="">🤖 Smart Home</a><a href="creator.html" class="">🎥 Creator</a><a href="luxury.html" class="active">⌚ Luxury EDC</a>
+    <a href="index.html" class="">All Gear</a><a href="luxury.html" class="active">Watches</a><a href="audio.html" class="">Audio</a><a href="kitchen.html" class="">Kitchen</a><a href="smarthome.html" class="">Smart Living</a><a href="creator.html" class="">Creator</a>
   </div>
 
-  <div class="hero">
-    <div class="hero-pretitle">The Definitive Radar • 2026 Edition</div>
-    <h1>⌚ Luxury EDC & Watches</h1>
-    <p>Precision mechanical timepieces, titanium tools, and heritage leather gear.</p>
-    <div class="hero-trust-badges">
-      <span>👑 100% Unbiased Editorial</span>
-      <span>🔬 Hands-On Benchmarking</span>
-      <span>🌍 Multi-Currency Price Tracking</span>
+  <!-- Habitat Hero & Filter Bar -->
+  <div class="habitat-hero">
+    <div class="hero-inner">
+      <div class="hero-category-label">
+        <span>👑</span> THE CROWN RADAR &bull; 2026 EDITION
+      </div>
+      <h1 class="hero-title">Luxury EDC & Watches</h1>
+      <p class="hero-desc">Precision mechanical timepieces, titanium tools, and heritage leather gear.</p>
+
+      <div class="hero-trust-bar">
+        <span>✓ 100% Unbiased Editorial</span>
+        <span>✓ Metrology & Metas Benchmarking</span>
+        <span>✓ Real-Time Multi-Currency Tracker</span>
+      </div>
+
+      <div class="filter-controls-bar">
+        <button class="filters-pill-btn" type="button" aria-label="Filters">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
+          Filters & Search
+        </button>
+        <div class="filter-center-tabs">
+          <a href="index.html" class="ftab ">View all</a>
+          <a href="luxury.html" class="ftab active">Watches & EDC</a>
+          <a href="audio.html" class="ftab ">Audio & Cinema</a>
+          <a href="kitchen.html" class="ftab ">Kitchen Tech</a>
+          <a href="smarthome.html" class="ftab ">Smart Living</a>
+          <a href="creator.html" class="ftab ">Creator Studio</a>
+        </div>
+        <div class="filter-right-sort">
+          <span>Sort: Featured ▾</span>
+        </div>
+      </div>
     </div>
   </div>
 
   <div class="container">
-    <div class="section-header">
-      <h2>Latest In-Depth Reviews</h2>
-      <span class="section-meta-pill">1 Verified Articles</span>
-    </div>
-
-    <div class="grid">
+    <div class="habitat-grid">
       
-        <div class="card">
-          <div class="card-img-wrapper">
-            <img src="/images/omega-speedmaster-professional-moonwatch.jpg" alt="Omega Speedmaster Professional Moonwatch Co-Axial Master Chronometer" loading="lazy" />
-            <span class="card-badge">Luxury EDC & Watches</span>
-            <span class="card-rating-float">⭐ 4.9</span>
+        <a href="reviews/omega-speedmaster-professional-moonwatch-co-axial-.html" class="habitat-product-card">
+          <div class="product-thumb-container">
+            <span class="product-niche-tag">LUXURY</span>
+            <img src="images/omega-speedmaster-professional-moonwatch.jpg" alt="Omega Speedmaster Professional Moonwatch Co-Axial Master Chronometer" loading="lazy" />
+            <div class="product-badge-pill">👑 9.8 • Omega</div>
           </div>
-          <div class="card-body">
-            <div class="card-meta">
-              <span class="card-brand">Omega</span>
-              <span class="card-price">$6,600.00</span>
-            </div>
-            <h3 class="card-title"><a href="reviews/omega-speedmaster-professional-moonwatch-co-axial-.html">Omega Speedmaster Professional Moonwatch Co-Axial Master Chronometer</a></h3>
-            <p class="card-desc">Comprehensive laboratory test breakdown, hands-on ergonomics analysis, and multi-store verified live deals.</p>
-            <div class="card-intl-badge">
-              <span>🌍</span> <span>US, CA, UK, EU, AU & Global Deals</span>
-            </div>
-            <div class="btn-group">
-              <a href="reviews/omega-speedmaster-professional-moonwatch-co-axial-.html" class="btn btn-primary">Read Review & Deals</a>
-              <a href="https://www.amazon.com/s?k=Omega+Speedmaster+Professional+Moonwatch+Co-Axial+Master+Chronometer&tag=yourtag-20" target="_blank" rel="nofollow sponsor" class="btn btn-secondary">Check Best Price</a>
+          <div class="product-card-details">
+            <span class="product-brand-kicker">Omega</span>
+            <h3 class="product-name">Omega Speedmaster Professional Moonwatch Co-Axial Master Chronometer</h3>
+            <div class="product-variant">Luxury EDC & Watches &bull; Lab Tested</div>
+            <div class="product-price">$6,600.00</div>
+            <div class="product-card-cta-row">
+              <span>Read Field Report &rarr;</span>
+              <span>🌍 Verified Deal</span>
             </div>
           </div>
-        </div>
+        </a>
 
     </div>
   </div>
 
-  <footer>
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="kitchen.html">Kitchen</a>
-      <a href="audio.html">Audio</a>
-      <a href="smarthome.html">Smart Home</a>
-      <a href="creator.html">Creator Gear</a>
-      <a href="luxury.html">Luxury EDC</a>
-      <a href="sitemap.xml">Sitemap</a>
-      <a href="feed.xml">RSS Feed</a>
+  <!-- Habitat Footer & Newsletter -->
+  <footer class="habitat-footer">
+    <div class="container">
+      <div class="footer-top-row">
+        <div class="footer-brand-newsletter">
+          <a href="index.html" class="brand-logo footer-logo">
+            <span class="crown-icon-wrapper">
+              <svg class="crown-logo-svg" width="30" height="26" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="crownGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#9a6e1a"/>
+    </linearGradient>
+  </defs>
+  <path d="M2 7L7.5 18H24.5L30 7L21.5 12.5L16 3L10.5 12.5L2 7Z" fill="url(#crownGoldGrad)"/>
+  <rect x="6" y="21" width="20" height="3.5" rx="1" fill="url(#crownGoldGrad)"/>
+</svg>
+            </span>
+            <span class="logo-text">CrownGear Reviews - High-Ticket Luxury & Tech Radar</span>
+          </a>
+          <p class="newsletter-tagline">Join the Crown Dispatch: Exclusive insider deal alerts, unreleased hardware leaks, and independent metrology reports sent weekly.</p>
+          <form class="newsletter-inline-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to CrownGear Intelligence.');">
+            <input type="email" placeholder="Enter your email" required class="newsletter-input" />
+            <button type="submit" class="newsletter-submit-btn">Stay Updated</button>
+          </form>
+        </div>
+        <div class="footer-nav-columns">
+          <div class="footer-col">
+            <h4>Categories</h4>
+            <ul>
+              <li><a href="luxury.html">Watches & EDC</a></li>
+              <li><a href="audio.html">Audio & Cinema</a></li>
+              <li><a href="kitchen.html">Kitchen Tech</a></li>
+              <li><a href="smarthome.html">Smart Living</a></li>
+              <li><a href="creator.html">Creator Studio</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="index.html">About CrownGear</a></li>
+              <li><a href="index.html">Editorial Standards</a></li>
+              <li><a href="index.html">Contact Team</a></li>
+              <li><a href="index.html">Careers</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Verification</h4>
+            <ul>
+              <li><a href="index.html">Testing Protocol</a></li>
+              <li><a href="index.html">Benchmarking Lab</a></li>
+              <li><a href="index.html">Multi-Store Tracker</a></li>
+              <li><a href="feed.xml">RSS Feed</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Follow Us</h4>
+            <ul>
+              <li><a href="https://twitter.com" target="_blank" rel="nofollow">𝕏 Twitter</a></li>
+              <li><a href="https://instagram.com" target="_blank" rel="nofollow">Instagram</a></li>
+              <li><a href="https://youtube.com" target="_blank" rel="nofollow">YouTube</a></li>
+              <li><a href="sitemap.xml">Sitemap</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <p>&copy; 2026 CrownGear Reviews - High-Ticket Luxury & Tech Radar, LLC. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <span class="crafted-badge">👑 Crafted with royal discernment & metrology precision</span>
+          <a href="index.html">Privacy Policy</a>
+          <a href="index.html">Terms of Service</a>
+        </div>
+      </div>
     </div>
-    <p>&copy; 2026 CrownGear Reviews - High-Ticket Luxury & Tech Radar. All rights reserved.</p>
-    <p class="footer-disclaimer">CrownGear Reviews is an independent publication dedicated to high-ticket consumer gear, luxury mechanical timepieces, and flagship technology. Editorial decisions are made strictly without manufacturer sponsorship.</p>
   </footer>
 
   <script>
   (function() {
-    var savedTheme = localStorage.getItem('cg_theme') || 'dark';
+    var savedTheme = localStorage.getItem('cg_theme') || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
     function updateThemeBtn() {
       var icon = document.getElementById('themeIcon');
@@ -113,7 +209,7 @@
     var toggleBtn = document.getElementById('themeToggleBtn');
     if (toggleBtn) {
       toggleBtn.addEventListener('click', function() {
-        var cur = document.documentElement.getAttribute('data-theme') || 'dark';
+        var cur = document.documentElement.getAttribute('data-theme') || 'light';
         var next = cur === 'dark' ? 'light' : 'dark';
         document.documentElement.setAttribute('data-theme', next);
         localStorage.setItem('cg_theme', next);
