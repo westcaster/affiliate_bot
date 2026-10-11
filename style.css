@@ -1448,3 +1448,116 @@ th {
   align-items: center;
   gap: 4px;
 }
+
+.brand-short {
+  font-weight: 700;
+}
+
+.brand-long {
+  font-weight: 500;
+}
+
+/* Mobile Category Bar Scrollbar Hide */
+.mobile-category-bar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.mobile-category-bar::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .habitat-header .nav-container {
+    padding: 0 16px;
+    height: 60px;
+  }
+  .brand-logo {
+    font-size: 1.05rem;
+    gap: 8px;
+  }
+  .brand-radar-pill {
+    display: none;
+  }
+  .brand-long {
+    display: none;
+  }
+  .hero-inner {
+    padding: 0 16px;
+  }
+  .filter-controls-bar {
+    gap: 12px;
+  }
+  .filter-center-tabs {
+    gap: 14px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .habitat-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px 12px !important;
+    padding: 24px 0 60px !important;
+  }
+  .container {
+    padding: 0 16px !important;
+  }
+  .product-name {
+    font-size: 0.88rem !important;
+  }
+  .product-brand-kicker {
+    font-size: 0.7rem !important;
+  }
+  .product-variant {
+    font-size: 0.72rem !important;
+  }
+  .product-price {
+    font-size: 0.98rem !important;
+  }
+  .product-badge-pill {
+    font-size: 0.65rem !important;
+    padding: 3px 7px !important;
+  }
+  .product-niche-tag {
+    font-size: 0.6rem !important;
+    padding: 2px 6px !important;
+  }
+  .product-card-cta-row {
+    font-size: 0.74rem !important;
+  }
+  .sticky-buy-bar {
+    padding: 10px 0 !important;
+    padding-bottom: max(10px, env(safe-area-inset-bottom)) !important;
+  }
+  .sticky-bar-container {
+    padding: 0 14px !important;
+    gap: 10px !important;
+  }
+  .sticky-product-info {
+    max-width: 58% !important;
+    gap: 10px !important;
+  }
+  .sticky-thumb {
+    width: 36px !important;
+    height: 36px !important;
+  }
+  .sticky-title {
+    max-width: 130px !important;
+    font-size: 0.8rem !important;
+  }
+  .sticky-rating { display: none !important; }
+  .sticky-price { font-size: 1.02rem !important; }
+  .sticky-btn {
+    padding: 8px 12px !important;
+    font-size: 0.8rem !important;
+  }
+  .sticky-btn-secondary { display: none !important; }
+}
+
+@media (max-width: 360px) {
+  .habitat-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
