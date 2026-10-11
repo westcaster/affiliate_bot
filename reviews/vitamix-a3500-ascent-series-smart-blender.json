@@ -6,7 +6,12 @@
   "image": "/images/vitamix-a3500-ascent-blender.jpg",
   "niche_slug": "kitchen",
   "niche_name": "Luxury Kitchen & Culinary",
-  "primary_link": "https://www.amazon.com/s?k=Vitamix+A3500+Ascent+Series+Smart+Blender&tag=yourtag-20",
+  "primary_link": "https://www.amazon.com/dp/B01N23V27F?tag=yourtag-20",
   "timestamp": 1791563782,
-  "published_at": "2026-10-09T16:36:22.995855+00:00"
+  "published_at": "2026-10-09T16:36:22.995855+00:00",
+  "asin_us": "B01N23V27F",
+  "asin_ca": "B0758B54D4",
+  "walmart_id": "55495574",
+  "price_usd": "$649.95",
+  "price_cad": "$899.95 CAD"
 }
