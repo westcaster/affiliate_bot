@@ -502,14 +502,36 @@ Prices occasionally dip during Prime Days, Black Friday, Cyber Week, and seasona
 
       function detectRegion() {
         try {
+          var saved = localStorage.getItem('cg_user_region');
+          if (saved && geoData[saved]) return saved;
+
           var tz = (Intl.DateTimeFormat().resolvedOptions().timeZone || '').toLowerCase();
+          
+          var caZones = ['toronto', 'vancouver', 'montreal', 'edmonton', 'winnipeg', 'halifax', 'st_johns', 'regina', 'glace_bay', 'goose_bay', 'iqaluit', 'resolute', 'rankin_inlet', 'yellowknife', 'inuvik', 'dawson', 'whitehorse', 'swift_current', 'rainy_river'];
+          for (var c = 0; c < caZones.length; c++) {
+            if (tz.indexOf(caZones[c]) !== -1) return 'CA';
+          }
+
+          if (tz.indexOf('london') !== -1 || tz.indexOf('belfast') !== -1 || tz.indexOf('jersey') !== -1 || tz.indexOf('guernsey') !== -1 || tz.indexOf('isle_of_man') !== -1) {
+            return 'UK';
+          }
+
+          if (tz.indexOf('australia') !== -1 || tz.indexOf('sydney') !== -1 || tz.indexOf('melbourne') !== -1 || tz.indexOf('brisbane') !== -1 || tz.indexOf('perth') !== -1 || tz.indexOf('adelaide') !== -1 || tz.indexOf('darwin') !== -1 || tz.indexOf('hobart') !== -1 || tz.indexOf('auckland') !== -1) {
+            return 'AU';
+          }
+
+          if (tz.indexOf('europe/') === 0) {
+            return 'EU';
+          }
+
+          if (tz.indexOf('america/') === 0 || tz.indexOf('us/') === 0 || tz.indexOf('honolulu') !== -1 || tz.indexOf('anchorage') !== -1) {
+            return 'US';
+          }
+
           var lang = (navigator.language || '').toLowerCase();
-          if (tz.indexOf('london') !== -1 || tz.indexOf('belfast') !== -1 || lang === 'en-gb') return 'UK';
-          if (tz.indexOf('toronto') !== -1 || tz.indexOf('vancouver') !== -1 || tz.indexOf('montreal') !== -1 || tz.indexOf('edmonton') !== -1 || lang === 'en-ca') return 'CA';
-          if (tz.indexOf('europe/') === 0 || lang.indexOf('de') === 0 || lang.indexOf('fr') === 0 || lang.indexOf('es') === 0 || lang.indexOf('it') === 0) return 'EU';
-          if (tz.indexOf('australia/') === 0 || tz.indexOf('auckland') !== -1 || lang === 'en-au') return 'AU';
-          if (tz.indexOf('america/') === 0 || lang === 'en-us') return 'US';
-          if (tz.indexOf('asia/') === 0 || tz.indexOf('africa/') === 0) return 'GLOBAL';
+          if (lang === 'en-ca') return 'CA';
+          if (lang === 'en-au' || lang === 'en-nz') return 'AU';
+          if (lang === 'en-gb') return 'UK';
         } catch(e) {}
         return 'US';
       }
@@ -564,11 +586,33 @@ Prices occasionally dip during Prime Days, Black Friday, Cyber Week, and seasona
       var defaultReg = detectRegion();
       switchRegion(defaultReg);
 
+      try {
+        fetch('https://api.country.is/')
+          .then(function(res) { return res.json(); })
+          .then(function(data) {
+            if (data && data.country) {
+              var cc = data.country.toUpperCase();
+              var targetReg = null;
+              if (cc === 'US') targetReg = 'US';
+              else if (cc === 'CA') targetReg = 'CA';
+              else if (cc === 'GB') targetReg = 'UK';
+              else if (['DE', 'FR', 'IT', 'ES', 'NL', 'SE', 'PL', 'BE', 'AT', 'CH'].indexOf(cc) !== -1) targetReg = 'EU';
+              else if (cc === 'AU' || cc === 'NZ') targetReg = 'AU';
+              if (targetReg && targetReg !== defaultReg && !localStorage.getItem('cg_user_region')) {
+                switchRegion(targetReg);
+              }
+            }
+          }).catch(function() {});
+      } catch(e) {}
+
       if (tabsContainer) {
         tabsContainer.addEventListener('click', function(e) {
           if (e.target && e.target.classList.contains('geo-tab-btn')) {
             var reg = e.target.getAttribute('data-region');
-            if (reg) switchRegion(reg);
+            if (reg) {
+              try { localStorage.setItem('cg_user_region', reg); } catch(err) {}
+              switchRegion(reg);
+            }
           }
         });
       }
