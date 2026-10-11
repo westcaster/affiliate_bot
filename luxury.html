@@ -73,7 +73,7 @@
       </div>
 
       <div class="filter-controls-bar">
-        <button class="filters-pill-btn" type="button" aria-label="Filters">
+        <button class="filters-pill-btn" id="openFilterModal" type="button" aria-label="Filters & Search">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
           Filters & Search
         </button>
@@ -85,8 +85,48 @@
           <a href="smarthome.html" class="ftab ">Smart Living</a>
           <a href="creator.html" class="ftab ">Creator Studio</a>
         </div>
-        <div class="filter-right-sort">
-          <span>Sort: Featured ▾</span>
+        <div class="filter-right-sort" id="sortTrigger">
+          <span>Sort: <strong id="currentSortLabel">Featured</strong> ▾</span>
+          <div class="sort-dropdown-menu" id="sortMenu">
+            <div class="sort-option active" data-sort="featured">Featured</div>
+            <div class="sort-option" data-sort="score-desc">Highest Crown Score</div>
+            <div class="sort-option" data-sort="price-desc">Price: High to Low</div>
+            <div class="sort-option" data-sort="price-asc">Price: Low to High</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Search & Filter Modal -->
+  <div class="filter-modal-backdrop" id="filterModalBackdrop">
+    <div class="filter-modal-card">
+      <div class="filter-modal-header">
+        <div class="filter-modal-title">
+          <span>👑</span> Filters & Precision Search
+        </div>
+        <button type="button" class="filter-modal-close" id="closeFilterModal" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="filter-modal-body">
+        <div class="search-input-wrapper">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="modalSearchInput" class="modal-search-input" placeholder="Search luxury EDC, audio, kitchen, cameras..." autocomplete="off" />
+        </div>
+        <div class="modal-filter-pills-label">Department / Curated Radar</div>
+        <div class="modal-niche-pills">
+          <button type="button" class="niche-filter-pill active" data-niche="all">All Disciplines</button>
+          <button type="button" class="niche-filter-pill" data-niche="luxury">Watches & EDC</button>
+          <button type="button" class="niche-filter-pill" data-niche="audio">Audio & Cinema</button>
+          <button type="button" class="niche-filter-pill" data-niche="kitchen">Kitchen Tech</button>
+          <button type="button" class="niche-filter-pill" data-niche="smarthome">Smart Living</button>
+          <button type="button" class="niche-filter-pill" data-niche="creator">Creator Studio</button>
+        </div>
+      </div>
+      <div class="filter-modal-footer">
+        <span class="filter-results-count" id="filterResultsCount">Showing all items</span>
+        <div class="filter-modal-actions">
+          <button type="button" class="btn-filter-reset" id="resetFilterModal">Reset</button>
+          <button type="button" class="btn-filter-done" id="doneFilterModal">Apply & View</button>
         </div>
       </div>
     </div>
@@ -95,7 +135,7 @@
   <div class="container">
     <div class="habitat-grid">
       
-        <a href="reviews/omega-speedmaster-professional-moonwatch-co-axial-.html" class="habitat-product-card">
+        <a href="reviews/omega-speedmaster-professional-moonwatch-co-axial-.html" class="habitat-product-card" data-order="0" data-title="omega speedmaster professional moonwatch co-axial master chronometer" data-brand="omega" data-niche="luxury" data-price="6600.00" data-score="9.8">
           <div class="product-thumb-container">
             <span class="product-niche-tag">LUXURY</span>
             <img src="images/omega-speedmaster-professional-moonwatch.jpg" alt="Omega Speedmaster Professional Moonwatch Co-Axial Master Chronometer" loading="lazy" />
@@ -224,6 +264,134 @@
       var pb = document.getElementById('readingProgress');
       if (pb) pb.style.width = scrolled + '%';
     });
+
+    // Live filter, search and sorting engine
+    var filterBtn = document.getElementById('openFilterModal');
+    var modalBackdrop = document.getElementById('filterModalBackdrop');
+    var closeBtn = document.getElementById('closeFilterModal');
+    var doneBtn = document.getElementById('doneFilterModal');
+    var resetBtn = document.getElementById('resetFilterModal');
+    var searchInput = document.getElementById('modalSearchInput');
+    var nichePills = document.querySelectorAll('.niche-filter-pill');
+    var resultCount = document.getElementById('filterResultsCount');
+    var grid = document.querySelector('.habitat-grid');
+    var productCards = Array.from(document.querySelectorAll('.habitat-product-card'));
+    var sortTrigger = document.getElementById('sortTrigger');
+    var sortMenu = document.getElementById('sortMenu');
+    var sortOptions = document.querySelectorAll('.sort-option');
+    var currentSortLabel = document.getElementById('currentSortLabel');
+
+    var currentQuery = '';
+    var currentNiche = 'all';
+    var currentSort = 'featured';
+
+    function applyFiltersAndSort() {
+      var visibleCards = [];
+      productCards.forEach(function(card) {
+        var title = (card.getAttribute('data-title') || '').toLowerCase();
+        var brand = (card.getAttribute('data-brand') || '').toLowerCase();
+        var niche = (card.getAttribute('data-niche') || '').toLowerCase();
+        var matchesQuery = !currentQuery || title.indexOf(currentQuery) !== -1 || brand.indexOf(currentQuery) !== -1;
+        var matchesNiche = currentNiche === 'all' || niche === currentNiche;
+        if (matchesQuery && matchesNiche) {
+          card.style.display = 'flex';
+          visibleCards.push(card);
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if (resultCount) {
+        resultCount.textContent = visibleCards.length + ' item' + (visibleCards.length === 1 ? '' : 's') + ' found';
+      }
+
+      if (grid) {
+        visibleCards.sort(function(a, b) {
+          if (currentSort === 'score-desc') {
+            return parseFloat(b.getAttribute('data-score') || 0) - parseFloat(a.getAttribute('data-score') || 0);
+          } else if (currentSort === 'price-desc') {
+            return parseFloat(b.getAttribute('data-price') || 0) - parseFloat(a.getAttribute('data-price') || 0);
+          } else if (currentSort === 'price-asc') {
+            return parseFloat(a.getAttribute('data-price') || 0) - parseFloat(b.getAttribute('data-price') || 0);
+          } else {
+            return parseInt(a.getAttribute('data-order') || 0) - parseInt(b.getAttribute('data-order') || 0);
+          }
+        });
+        visibleCards.forEach(function(c) { grid.appendChild(c); });
+      }
+    }
+
+    if (filterBtn && modalBackdrop) {
+      filterBtn.addEventListener('click', function() {
+        modalBackdrop.classList.add('open');
+        if (searchInput) searchInput.focus();
+      });
+    }
+    function closeModal() {
+      if (modalBackdrop) modalBackdrop.classList.remove('open');
+    }
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (doneBtn) doneBtn.addEventListener('click', closeModal);
+    if (modalBackdrop) {
+      modalBackdrop.addEventListener('click', function(e) {
+        if (e.target === modalBackdrop) closeModal();
+      });
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modalBackdrop && modalBackdrop.classList.contains('open')) {
+        closeModal();
+      }
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener('input', function(e) {
+        currentQuery = e.target.value.trim().toLowerCase();
+        applyFiltersAndSort();
+      });
+    }
+
+    nichePills.forEach(function(pill) {
+      pill.addEventListener('click', function() {
+        nichePills.forEach(function(p) { p.classList.remove('active'); });
+        pill.classList.add('active');
+        currentNiche = pill.getAttribute('data-niche') || 'all';
+        applyFiltersAndSort();
+      });
+    });
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', function() {
+        if (searchInput) searchInput.value = '';
+        currentQuery = '';
+        currentNiche = 'all';
+        nichePills.forEach(function(p) {
+          if (p.getAttribute('data-niche') === 'all') p.classList.add('active');
+          else p.classList.remove('active');
+        });
+        applyFiltersAndSort();
+      });
+    }
+
+    if (sortTrigger && sortMenu) {
+      sortTrigger.addEventListener('click', function(e) {
+        e.stopPropagation();
+        sortMenu.classList.toggle('show');
+      });
+      document.addEventListener('click', function() {
+        sortMenu.classList.remove('show');
+      });
+      sortOptions.forEach(function(opt) {
+        opt.addEventListener('click', function(e) {
+          e.stopPropagation();
+          sortOptions.forEach(function(o) { o.classList.remove('active'); });
+          opt.classList.add('active');
+          currentSort = opt.getAttribute('data-sort');
+          if (currentSortLabel) currentSortLabel.textContent = opt.textContent;
+          sortMenu.classList.remove('show');
+          applyFiltersAndSort();
+        });
+      });
+    }
   })();
   </script>
 </body>
