@@ -37,6 +37,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://example.com/reviews/miyabi-black-5000mcd-8-inch-chef-s-knife.html</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://example.com/reviews/rolex-submariner-date-41mm-oystersteel-126610ln.html</loc>
     <lastmod>2026-10-16</lastmod>
     <changefreq>weekly</changefreq>
