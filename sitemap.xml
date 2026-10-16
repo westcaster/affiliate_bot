@@ -37,6 +37,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://example.com/reviews/leica-m11-rangefinder-digital-camera.html</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://example.com/reviews/hasselblad-x2d-100c-medium-format-mirrorless-camer.html</loc>
     <lastmod>2026-10-16</lastmod>
     <changefreq>weekly</changefreq>
