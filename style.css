@@ -718,43 +718,62 @@ body {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 15px 18px;
-  border-radius: 6px;
-  font-size: 0.94rem;
-  font-weight: 700;
+  padding: 14px 20px;
+  background: var(--btn-secondary-bg);
+  color: var(--btn-secondary-text);
+  border: 1px solid var(--btn-secondary-border);
+  border-radius: 4px;
+  font-size: 0.92rem;
+  font-weight: 600;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.2s ease;
   font-family: var(--font-heading);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
   white-space: nowrap;
 }
 
 .btn-store:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
-}
-
-.btn-store-amazon {
-  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-  color: #0b0f19 !important;
-  border: 1px solid #d97706;
+  background: var(--card-bg);
+  transform: translateY(-1px);
 }
 
 .btn-store-amazon:hover {
-  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
   border-color: #f59e0b;
-}
-
-.btn-store-ebay {
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-  color: #ffffff !important;
-  border: 1px solid #1d4ed8;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.14);
 }
 
 .btn-store-ebay:hover {
-  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
   border-color: #3b82f6;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.14);
+}
+
+.store-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.store-dot-amazon {
+  background: #f59e0b;
+  box-shadow: 0 0 6px rgba(245, 158, 11, 0.45);
+}
+
+.store-dot-ebay {
+  background: #3b82f6;
+  box-shadow: 0 0 6px rgba(59, 130, 246, 0.45);
+}
+
+.store-arrow {
+  color: var(--text-muted);
+  transition: transform 0.2s ease, color 0.2s ease;
+  margin-left: 2px;
+}
+
+.btn-store:hover .store-arrow, .btn-habitat-secondary:hover .store-arrow {
+  transform: translateX(2px);
+  color: var(--text-main);
 }
 
 .btn-habitat-primary {
@@ -1204,26 +1223,24 @@ body {
   border: 1px solid var(--card-border);
 }
 
-.sticky-btn-amazon {
-  background: #f59e0b;
-  color: #0b0f19 !important;
-  border: 1px solid #d97706;
-  font-weight: 700;
+.sticky-btn-amazon, .sticky-btn-ebay {
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--card-border);
+  font-weight: 600;
+  transition: all 0.2s ease;
 }
 
 .sticky-btn-amazon:hover {
-  background: #fbbf24;
-}
-
-.sticky-btn-ebay {
-  background: #2563eb;
-  color: #ffffff !important;
-  border: 1px solid #1d4ed8;
-  font-weight: 700;
+  background: var(--card-bg);
+  border-color: #f59e0b;
+  color: var(--text-main);
 }
 
 .sticky-btn-ebay:hover {
-  background: #3b82f6;
+  background: var(--card-bg);
+  border-color: #3b82f6;
+  color: var(--text-main);
 }
 
 @media (max-width: 768px) {
