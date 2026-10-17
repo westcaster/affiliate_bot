@@ -6,7 +6,9 @@
   "image": "/images/sony-wh-1000xm5.jpg",
   "niche_slug": "audio",
   "niche_name": "Audiophile & Elite Audio",
-  "primary_link": "https://www.amazon.com/s?k=Sony+WH-1000XM5+Wireless+Noise-Canceling+Headphones&tag=crowngearrevi-20",
+  "primary_link": "https://www.amazon.com/dp/B09XS7JWHH?tag=crowngearrevi-20",
   "timestamp": 1792182226,
-  "published_at": "2026-10-16T20:23:46.323444+00:00"
+  "published_at": "2026-10-16T20:23:46.323444+00:00",
+  "asin_us": "B09XS7JWHH",
+  "price_usd": "$399.99"
 }

@@ -6,7 +6,9 @@
   "image": "/images/leica-m11.jpg",
   "niche_slug": "luxury",
   "niche_name": "Luxury EDC & Watches",
-  "primary_link": "https://www.amazon.com/s?k=Leica+M11+Rangefinder+Digital+Camera&tag=crowngearrevi-20",
+  "primary_link": "https://www.amazon.com/dp/B09QQV1K1L?tag=crowngearrevi-20",
   "timestamp": 1792193172,
-  "published_at": "2026-10-16T23:26:12.271697+00:00"
+  "published_at": "2026-10-16T23:26:12.271697+00:00",
+  "asin_us": "B09QQV1K1L",
+  "price_usd": "$8,995.00"
 }
