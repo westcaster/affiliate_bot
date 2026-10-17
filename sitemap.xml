@@ -37,6 +37,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://example.com/reviews/la-marzocco-linea-micra-home-espresso-machine.html</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://example.com/reviews/leica-m11-rangefinder-digital-camera.html</loc>
     <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
