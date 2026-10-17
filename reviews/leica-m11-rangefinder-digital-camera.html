@@ -142,7 +142,14 @@
           <div class="single-score-badge">★★★★★ 4.9/5</div>
         </div>
         <div class="single-actions-group">
-          <a href="https://www.amazon.com/s?k=Leica+M11+Rangefinder+Digital+Camera&tag=crowngearrevi-20" id="primaryHeroDealBtn" target="_blank" rel="nofollow sponsor" class="btn-habitat-primary">Check Best Deal (Amazon / Authorized) &rarr;</a>
+          <div class="dual-store-actions">
+            <a href="https://www.amazon.com/s?k=Leica+M11+Rangefinder+Digital+Camera&tag=crowngearrevi-20" id="heroAmazonBtn" target="_blank" rel="nofollow sponsor" class="btn-store btn-store-amazon">
+              <span>Check Price on Amazon</span> &rarr;
+            </a>
+            <a href="https://www.ebay.com/sch/i.html?_nkw=Leica+M11+Rangefinder+Digital+Camera&mkcid=1&campid=5339222595&toolid=10001&mkevt=1" id="heroEbayBtn" target="_blank" rel="nofollow sponsor" class="btn-store btn-store-ebay">
+              <span>Check Price on eBay</span> &rarr;
+            </a>
+          </div>
           <a href="#geoBuyBox" class="btn-habitat-secondary">Compare All Store Prices 🌍</a>
         </div>
         <div class="guarantee-microcopy">
@@ -419,7 +426,8 @@ Prices occasionally dip during Prime Days, Black Friday, Cyber Week, and seasona
       </div>
       <div class="sticky-actions">
         <div class="sticky-price" style="font-size:0.92rem;font-weight:700;color:var(--accent-gold);letter-spacing:0.02em;">Live Deals Tracked</div>
-        <a href="https://www.amazon.com/s?k=Leica+M11+Rangefinder+Digital+Camera&tag=crowngearrevi-20" id="stickyHeroDealBtn" target="_blank" rel="nofollow sponsor" class="sticky-btn sticky-btn-primary">Check Best Deal</a>
+        <a href="https://www.amazon.com/s?k=Leica+M11+Rangefinder+Digital+Camera&tag=crowngearrevi-20" id="stickyAmazonBtn" target="_blank" rel="nofollow sponsor" class="sticky-btn sticky-btn-amazon">Amazon &rarr;</a>
+        <a href="https://www.ebay.com/sch/i.html?_nkw=Leica+M11+Rangefinder+Digital+Camera&mkcid=1&campid=5339222595&toolid=10001&mkevt=1" id="stickyEbayBtn" target="_blank" rel="nofollow sponsor" class="sticky-btn sticky-btn-ebay">eBay &rarr;</a>
         <a href="#geoBuyBox" class="sticky-btn sticky-btn-secondary">Compare Stores 🌍</a>
       </div>
     </div>
@@ -595,15 +603,20 @@ Prices occasionally dip during Prime Days, Black Friday, Cyber Week, and seasona
 
         var storeCards = [];
         var stores = region.stores || [];
-        var firstStoreUrl = (stores && stores.length > 0 && stores[0].url) ? stores[0].url : null;
-        if (firstStoreUrl) {
-          var pBtn = document.getElementById('primaryHeroDealBtn');
-          if (pBtn) pBtn.href = firstStoreUrl;
-          var sBtn = document.getElementById('stickyHeroDealBtn');
-          if (sBtn) sBtn.href = firstStoreUrl;
-        }
         for (var i = 0; i < stores.length; i++) {
           var s = stores[i];
+          var sName = (s.name || '').toLowerCase();
+          if (sName.indexOf('amazon') !== -1) {
+            var heroAmz = document.getElementById('heroAmazonBtn');
+            if (heroAmz) heroAmz.href = s.url;
+            var stickyAmz = document.getElementById('stickyAmazonBtn');
+            if (stickyAmz) stickyAmz.href = s.url;
+          } else if (sName.indexOf('ebay') !== -1) {
+            var heroEbay = document.getElementById('heroEbayBtn');
+            if (heroEbay) heroEbay.href = s.url;
+            var stickyEbay = document.getElementById('stickyEbayBtn');
+            if (stickyEbay) stickyEbay.href = s.url;
+          }
           var badgeHtml = s.badge ? '<span style="background:var(--accent-gold);color:#000;font-size:0.7rem;font-weight:800;padding:3px 8px;border-radius:12px;font-family:var(--font-mono);">' + s.badge + '</span>' : '';
           storeCards.push('<div class="geo-store-card">' +
             '<div>' +
@@ -614,7 +627,7 @@ Prices occasionally dip during Prime Days, Black Friday, Cyber Week, and seasona
               '<div style="font-size:0.95rem;font-weight:700;color:var(--accent-gold);margin-bottom:6px;font-family:var(--font-mono);">' + (s.status || 'Verified Live Deal') + '</div>' +
               '<div style="font-size:0.8rem;color:var(--text-dim);">' + (region.name || regCode) + ' • Verified In-Stock</div>' +
             '</div>' +
-            '<a href="' + s.url + '" target="_blank" rel="nofollow sponsor" class="btn-habitat-primary" style="padding:10px;font-size:0.85rem;">Check Best Deal &rarr;</a>' +
+            '<a href="' + s.url + '" target="_blank" rel="nofollow sponsor" class="btn-habitat-primary" style="padding:10px;font-size:0.85rem;">Check Deal &rarr;</a>' +
           '</div>');
         }
 
