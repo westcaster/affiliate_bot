@@ -4,13 +4,14 @@
   "brand": "Formovie",
   "price": "$2,999.00",
   "image": "/images/formovie-theater-4k-laser-projector.jpg",
-  "niche_slug": "smarthome",
-  "niche_name": "Smart Home & Robotics",
+  "niche_slug": "tech",
+  "niche_name": "Tech & Optics",
   "primary_link": "https://www.amazon.com/dp/B0DK62VL1F?tag=crowngearrevi-20",
   "timestamp": 1791570626,
   "published_at": "2026-10-09T18:30:26.753342+00:00",
   "asin_us": "B0DK62VL1F",
   "asin_ca": "B0DK62VL1F",
   "price_usd": "$2,999.00",
-  "price_cad": "$3,999.00 CAD"
+  "price_cad": "$3,999.00 CAD",
+  "sub_category": "Home Theater & Sound"
 }

@@ -4,11 +4,12 @@
   "brand": "Rolex",
   "price": "$10,250.00",
   "image": "/images/rolex-submariner-date.jpg",
-  "niche_slug": "luxury",
-  "niche_name": "Luxury EDC & Watches",
+  "niche_slug": "watches",
+  "niche_name": "Watches & EDC",
   "primary_link": "https://www.amazon.com/dp/B08K3C29YJ?tag=crowngearrevi-20",
   "timestamp": 1792176048,
   "published_at": "2026-10-16T18:40:48.537355+00:00",
   "asin_us": "B08K3C29YJ",
-  "price_usd": "$10,250.00"
+  "price_usd": "$10,250.00",
+  "sub_category": "Luxury Timepieces"
 }

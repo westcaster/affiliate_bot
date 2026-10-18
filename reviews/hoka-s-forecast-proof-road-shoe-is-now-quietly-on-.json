@@ -4,11 +4,12 @@
   "brand": "Hoka",
   "price": "$160.00",
   "image": "/images/hoka-forecast-proof-road-shoe.jpg",
-  "niche_slug": "creator",
-  "niche_name": "Creator & Pro Workspace",
+  "niche_slug": "apparel",
+  "niche_name": "Apparel & Footwear",
   "primary_link": "https://www.amazon.com/dp/B0BC21QZ4K?tag=crowngearrevi-20",
   "timestamp": 1792202543,
   "published_at": "2026-10-17T02:02:23.044259+00:00",
   "asin_us": "B0BC21QZ4K",
-  "price_usd": "$160.00"
+  "price_usd": "$160.00",
+  "sub_category": "Road & Running Shoes"
 }

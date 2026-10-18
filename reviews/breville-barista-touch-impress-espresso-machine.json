@@ -4,8 +4,8 @@
   "brand": "Breville",
   "price": "$1,499.95",
   "image": "/images/breville-barista-touch-impress.jpg",
-  "niche_slug": "kitchen",
-  "niche_name": "Luxury Kitchen & Culinary",
+  "niche_slug": "appliances",
+  "niche_name": "Appliances & Kitchen",
   "primary_link": "https://www.amazon.com/dp/B0BYSMHQ7L?tag=crowngearrevi-20",
   "timestamp": 1791563769,
   "published_at": "2026-10-09T16:36:09.254152+00:00",
@@ -13,5 +13,6 @@
   "asin_ca": "B0CD27L2Y7",
   "walmart_id": "2099302633",
   "price_usd": "$1,499.95",
-  "price_cad": "$1,999.99 CAD"
+  "price_cad": "$1,999.99 CAD",
+  "sub_category": "Espresso & Coffee Machines"
 }

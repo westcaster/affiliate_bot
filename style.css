@@ -1929,3 +1929,92 @@ body.has-sticky-bar {
     transform: translateY(0);
   }
 }
+
+/* Subcategory Filter Bar & Pills */
+.subcat-filter-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 14px 0 6px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.subcat-filter-row::-webkit-scrollbar {
+  display: none;
+}
+.subcat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: var(--card-bg);
+  color: var(--text-muted);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  flex-shrink: 0;
+}
+.subcat-pill:hover {
+  background: var(--card-bg-hover);
+  color: var(--text-main);
+  border-color: var(--text-main);
+  transform: translateY(-1px);
+}
+.subcat-pill.active {
+  background: var(--text-main);
+  color: var(--bg);
+  border-color: var(--text-main);
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+.subcat-pill-count {
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  opacity: 0.85;
+  background: rgba(125, 125, 125, 0.18);
+  padding: 1px 6px;
+  border-radius: 10px;
+}
+.subcat-pill.active .subcat-pill-count {
+  background: rgba(255, 255, 255, 0.25);
+  color: var(--bg);
+}
+[data-theme="dark"] .subcat-pill.active .subcat-pill-count {
+  background: rgba(0, 0, 0, 0.35);
+  color: #090a0f;
+}
+.modal-subcat-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.subcat-modal-pill {
+  padding: 6px 12px;
+  border-radius: 16px;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--font-heading);
+}
+.subcat-modal-pill:hover {
+  border-color: var(--text-main);
+  color: var(--text-main);
+}
+.subcat-modal-pill.active {
+  background: var(--accent-gold);
+  border-color: var(--accent-gold);
+  color: #090a0f;
+  font-weight: 700;
+}
