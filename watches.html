@@ -9,7 +9,7 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <meta name="p:domain_verify" content="a96c65bc97cb2f36551de0864b244e42"/>
-  <link rel="stylesheet" href="style.css?v=1792687110">
+  <link rel="stylesheet" href="style.css?v=1792704636">
   <link rel="alternate" type="application/rss+xml" title="CrownGear Reviews - High-Ticket Luxury & Tech Radar RSS Feed" href="feed.xml">
   <!-- Pinterest Tag Base Code -->
   <script>
@@ -27,6 +27,16 @@
     src="https://ct.pinterest.com/v3/?event=init&tid=2613873962095&noscript=1" />
   </noscript>
   <!-- End Pinterest Tag Base Code -->
+  <!-- OneSignal Web Push SDK -->
+  <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+  <script>
+    window.OneSignalDeferred = window.OneSignalDeferred || [];
+    OneSignalDeferred.push(async function(OneSignal) {
+      await OneSignal.init({
+        appId: "ce0cf802-8702-4f71-9bea-f5b4ce45ec75",
+      });
+    });
+  </script>
 </head>
 <body>
   <div class="reading-progress-bar" id="readingProgress"></div>
