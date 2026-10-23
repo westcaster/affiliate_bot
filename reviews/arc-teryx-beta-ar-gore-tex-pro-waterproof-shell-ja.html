@@ -6,7 +6,7 @@
   <title>Arc'teryx Beta AR Gore-Tex Pro Waterproof Shell Jacket Review - CrownGear Reviews - High-Ticket Luxury & Tech Radar</title>
   <meta name="description" content="In-depth buying guide, specifications, pros & cons, and verified multi-store price comparisons for Arc'teryx Beta AR Gore-Tex Pro Waterproof Shell Jacket.">
   <meta name="p:domain_verify" content="a96c65bc97cb2f36551de0864b244e42"/>
-  <link rel="stylesheet" href="../style.css?v=1792704636">
+  <link rel="stylesheet" href="../style.css?v=1792763413">
   <style>
   /* CrownGear Sovereign Store Actions - Elegant Unified Styling */
   .single-actions-group {
@@ -148,7 +148,11 @@
     src="https://ct.pinterest.com/v3/?event=init&tid=2613873962095&noscript=1" />
   </noscript>
   <!-- End Pinterest Tag Base Code -->
-  <!-- OneSignal Web Push SDK -->
+  <!-- OneSignal Web Push SDK & iOS PWA Support -->
+  <link rel="manifest" href="../manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="CrownGear">
   <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
   <script>
     window.OneSignalDeferred = window.OneSignalDeferred || [];
@@ -156,6 +160,9 @@
       await OneSignal.init({
         appId: "ce0cf802-8702-4f71-9bea-f5b4ce45ec75",
       });
+      try {
+        await OneSignal.Slidedown.promptPush();
+      } catch (e) {}
     });
   </script>
 </head>
