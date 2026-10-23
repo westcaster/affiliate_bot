@@ -6,7 +6,7 @@
   <title>Ecovacs Deebot X2 Omni All-in-One Robot Vacuum and Mop Review - CrownGear Reviews - High-Ticket Luxury & Tech Radar</title>
   <meta name="description" content="In-depth buying guide, specifications, pros & cons, and verified multi-store price comparisons for Ecovacs Deebot X2 Omni All-in-One Robot Vacuum and Mop.">
   <meta name="p:domain_verify" content="a96c65bc97cb2f36551de0864b244e42"/>
-  <link rel="stylesheet" href="../style.css?v=1792765076">
+  <link rel="stylesheet" href="../style.css?v=1792778928">
   <style>
   /* CrownGear Sovereign Store Actions - Elegant Unified Styling */
   .single-actions-group {
@@ -200,6 +200,10 @@
       </a>
       <nav>
         <ul class="nav-menu">
+          <li><a href="../index.html">Home</a></li>
+          <li class="nav-divider">|</li>
+          <li><a href="../all.html">View All</a></li>
+          <li class="nav-divider">|</li>
           <li><a href="../tech.html">Tech & Optics</a></li>
           <li class="nav-divider">|</li>
           <li><a href="../appliances.html">Appliances & Kitchen</a></li>
@@ -220,7 +224,8 @@
   </header>
 
   <div class="mobile-category-bar">
-    <a href="../index.html">All Gear</a>
+    <a href="../index.html">Home</a>
+    <a href="../all.html">View All</a>
     <a href="../tech.html">Tech & Optics</a>
     <a href="../appliances.html">Appliances</a>
     <a href="../furniture.html">Furniture</a>
@@ -228,7 +233,33 @@
     <a href="../apparel.html">Apparel</a>
   </div>
 
-  <div class="container">
+  <div class="container" style="padding-top:20px;">
+    <!-- Universal Search Bar with Category Dropdown -->
+    <div class="universal-search-section" style="margin-bottom:24px;">
+      <form class="crown-universal-search-bar" id="reviewSearchForm" onsubmit="event.preventDefault(); var cat=document.getElementById('reviewCatSelect').value; var q=document.getElementById('reviewSearchInput').value.trim(); window.location.href='../all.html?cat='+encodeURIComponent(cat)+(q?'&q='+encodeURIComponent(q):''); return false;">
+        <div class="search-category-dropdown-wrapper">
+          <select id="reviewCatSelect" class="search-category-select" aria-label="Select Category">
+            <option value="all">All Departments (25+)</option>
+            <option value="tech" >Tech &amp; Optics</option>
+            <option value="appliances" selected>Appliances &amp; Kitchen</option>
+            <option value="furniture" >Furniture &amp; Workspace</option>
+            <option value="watches" >Watches &amp; EDC</option>
+            <option value="apparel" >Apparel &amp; Footwear</option>
+          </select>
+        </div>
+        <div class="search-input-wrapper">
+          <svg class="search-lens-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="reviewSearchInput" class="search-text-input" placeholder="Search luxury EDC, audio, kitchen, cameras, timepieces..." autocomplete="off" />
+        </div>
+        <button type="submit" class="search-submit-btn">
+          <span>Search</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </form>
+    </div>
     <!-- Habitat Product Single 2-Column Hero -->
     <div class="single-hero-grid">
       <div class="single-image-box">
